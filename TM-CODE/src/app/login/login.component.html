@@ -1,0 +1,66 @@
+<div class="page-container">
+  
+  <div class="left-panel">
+    
+    <header class="top-nav">
+      <div class="logo">
+        <span class="blue-dot"></span> TM-CODE
+      </div>
+      <nav>
+        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">Join</a>
+      </nav>
+    </header>
+
+    <div class="form-wrapper">
+      <div class="form-header">
+        <span class="sub-title">Wellcome to tm-code</span>
+        <h1>WELLCOME BACK!<span class="blue-dot">.</span></h1>
+        <p class="login-prompt">
+          new here? <a href="#">sigh up</a>
+        </p>
+      </div>
+
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        
+        <div class="input-row">
+          <div class="input-group">
+            <label>username</label>
+            <div class="input-field">
+              <input type="text" formControlName="username">
+              <i class="fa fa-id-card input-icon"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-group full-width">
+          <label>Email</label>
+          <div class="input-field">
+            <input type="email" formControlName="email">
+            <i class="fa fa-envelope input-icon"></i>
+          </div>
+        </div>
+
+        <div class="input-group full-width">
+          <label>Password</label>
+          <div class="input-field active-field">
+            <input [type]="showPassword ? 'text' : 'password'" formControlName="password">
+            <i class="fa fa-eye input-icon clickable" (click)="togglePasswordVisibility()"></i>
+          </div>
+        </div>
+
+        <div class="button-row">
+          <button type="button" class="btn btn-secondary">Change method</button>
+          <button type="submit" class="btn btn-primary">Log in</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <div class="right-panel">
+    <div class="aw-logo">
+    </div>
+  </div>
+
+</div>
