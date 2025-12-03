@@ -2,7 +2,7 @@
 <app-header></app-header>
 <div class="main ml-10 mr-10 p-2">
     <!-- Cards -->
-    <div class="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 p-2">
+    <div class="cards grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 p-2">
         <app-cards 
             title="Niveau Agent" 
             [num]="1" 
@@ -44,6 +44,7 @@
             iconPath="fa fa-list">
         </app-cards>
     </div>
+    <br>
     
     <!-- Buttons -->
     <div class="button ml-60 flex gap-4 mt-4">
@@ -78,17 +79,19 @@
             hovercolor="hover:bg-red-400">
         </app-button>
     </div>
+    <br>
     
     <!-- Search -->
     <div class="search w-full mt-4">
         <app-searchbar></app-searchbar>
     </div>
 </div>
-
+ <br>
 <!-- Bouton de déconnexion -->
-<div class="logout-section p-4">
-    <p>Connecté en tant que: <strong>{{ currentUser?.username || currentUser?.email }}</strong></p>
-    <button (click)="logout()" class="btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">
+<div class="logout-section p-4 ">
+    <p>Bienvenue: <strong>{{ currentUser?.username || currentUser?.email }}</strong></p>
+    <br>
+    <button (click)="logout()" class="btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded ">
         <i class="fa fa-sign-out"></i> Déconnexion
     </button>
 </div>
