@@ -1,1 +1,94 @@
-<p>dashboard works!</p>
+<!-- src/app/features/dashboard/dashboard.component.html -->
+<app-header></app-header>
+<div class="main ml-10 mr-10 p-2">
+    <!-- Cards -->
+    <div class="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 p-2">
+        <app-cards 
+            title="Niveau Agent" 
+            [num]="1" 
+            descrip="Missions niveau agent" 
+            colorClass="text-sky-500" 
+            bgClass="bg-sky-100" 
+            iconPath="fa fa-user">
+        </app-cards>
+        <app-cards 
+            title="Active Projects" 
+            [num]="1" 
+            descrip="Projects currently active" 
+            colorClass="text-blue-700" 
+            bgClass="bg-blue-100" 
+            iconPath="fa fa-user-tie">
+        </app-cards>
+        <app-cards 
+            title="Active Projects" 
+            [num]="2" 
+            descrip="Projects currently active" 
+            colorClass="text-black-800" 
+            bgClass="bg-gray-200" 
+            iconPath="fa fa-user-shield">
+        </app-cards>
+        <app-cards 
+            title="Active Projects" 
+            [num]="2" 
+            descrip="Projects currently active" 
+            colorClass="text-green-600" 
+            bgClass="bg-green-100" 
+            iconPath="fa fa-user-check">
+        </app-cards>
+        <app-cards 
+            title="Active Projects" 
+            [num]="2" 
+            descrip="Projects currently active" 
+            colorClass="text-yellow-400" 
+            bgClass="bg-yellow-100" 
+            iconPath="fa fa-list">
+        </app-cards>
+    </div>
+    
+    <!-- Buttons -->
+    <div class="button ml-60 flex gap-4 mt-4">
+        <app-button 
+            label="Add User" 
+            iconPath="fa fa-plus" 
+            colorClass="bg-blue-800" 
+            hovercolor="hover:bg-blue-400">
+        </app-button>
+        <app-button 
+            label="PDF" 
+            iconPath="fa fa-file-pdf" 
+            colorClass="bg-gray-800" 
+            hovercolor="hover:bg-gray-400">
+        </app-button>
+        <app-button 
+            label="Excel" 
+            iconPath="fa fa-file-excel" 
+            colorClass="bg-sky-800" 
+            hovercolor="hover:bg-sky-400">
+        </app-button>
+        <app-button 
+            label="Briefcase" 
+            iconPath="fa fa-briefcase" 
+            colorClass="bg-green-800" 
+            hovercolor="hover:bg-green-400">
+        </app-button>
+        <app-button 
+            label="Filter" 
+            iconPath="fa fa-filter" 
+            colorClass="bg-red-800" 
+            hovercolor="hover:bg-red-400">
+        </app-button>
+    </div>
+    
+    <!-- Search -->
+    <div class="search w-full mt-4">
+        <app-searchbar></app-searchbar>
+    </div>
+</div>
+
+<!-- Bouton de déconnexion -->
+<div class="logout-section p-4">
+    <p>Connecté en tant que: <strong>{{ currentUser?.username || currentUser?.email }}</strong></p>
+    <button (click)="logout()" class="btn bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">
+        <i class="fa fa-sign-out"></i> Déconnexion
+    </button>
+</div>

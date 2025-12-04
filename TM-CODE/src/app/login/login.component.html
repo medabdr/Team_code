@@ -6,10 +6,7 @@
       <div class="logo">
         <span class="blue-dot"></span> TM-CODE
       </div>
-      <nav>
-        <a href="#" class="nav-link">Home</a>
-        <a href="#" class="nav-link">Join</a>
-      </nav>
+      
     </header>
 
     <div class="form-wrapper">
@@ -17,7 +14,7 @@
         <span class="sub-title">Welcome to tm-code</span>
         <h1>WELCOME BACK!<span class="blue-dot">.</span></h1>
         <p class="login-prompt">
-          new here? <a href="#">sign up</a>
+          new here? <a routerLink="/signup">sign up</a>
         </p>
       </div>
 
@@ -45,8 +42,14 @@
           <label>Password</label>
           <div class="input-field active-field">
             <input [type]="showPassword ? 'text' : 'password'" formControlName="password">
-            <i class="fa fa-eye input-icon clickable" (click)="togglePasswordVisibility()"></i>
+            <i [class]="showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'" 
+               class="input-icon clickable" 
+               (click)="togglePasswordVisibility()"></i>
           </div>
+        </div>
+
+        <div *ngIf="errorMessage" class="error-message" style="color:linear-gradient(to left, #FEF3C7, #064E3B); margin: 10px 0; font-size: 0.9rem;">
+          {{ errorMessage }}
         </div>
 
         <div class="button-row">
